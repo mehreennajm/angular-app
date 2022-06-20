@@ -1,0 +1,17 @@
+<h1>This is the First Component</h1>
+<!-- <label>One way data Binding</label> -->
+<!-- <input class="form-control" (input)="displayUser($event)"> -->
+<label>Two way Data Binding</label>
+<input class="form-control" [(ngModel)]="userName">
+<p>{{ userName }}</p>
+<button class="btn btn-danger" [disabled]="userName === ' ' " (click)="userName = ' '">Reset User</button>
+<hr>
+
+<input type="text" [(ngModel)]="employeeName" class="form-control">
+<button (click)="createArray()" class="btn btn-info"
+ [disabled]="employeeName === ' ' ">Add Items</button>
+<div>
+    <ul *ngFor="let employee of employees">
+        <li>{{employee}}</li>
+    </ul>
+</div>

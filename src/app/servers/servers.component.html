@@ -1,0 +1,16 @@
+<h1>This is the Second Component</h1>
+<input type="text" class="form-control" [(ngModel)]="serverName" >
+<button class="btn btn-warning" [disabled]="!allowButtonEnable" (click)="createServerStatus()"> 
+    {{ timeInOut}}
+</button>
+<div [ngStyle]="{'background-color': serverStatus === false ? backColor : 'green'}" 
+[ngClass]="{'alert alert-success' : serverStatus=== true }">
+
+<p *ngIf="serverStatus; else noServer" >Your Server name is: {{ serverName }}</p>
+<ng-template #noServer>
+    <p>Server is not created</p>
+</ng-template>
+</div>
+<!-- <i>{{allowButtonEnable}}</i> -->
+
+
